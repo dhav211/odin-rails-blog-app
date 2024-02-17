@@ -1,1 +1,1 @@
-# odin-rails-blog-app
+# The Odin Project - Rails Blog App
