@@ -2,7 +2,7 @@
     <% @posts.each do |post| %>
     <li>
         <div class="post-card">
-            <%= image_tag "thumbs_up_babe.jpg", class: "card-image" %>
+            <%= image_tag post.thumbnail_url, class: "card-image" %>
             <div class="card-text">
                 <h2><%= link_to post.title, post %></h2>
                 <p><%= post.text.truncate 350, separator: ' ' %></p>

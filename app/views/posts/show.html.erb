@@ -1,1 +1,5 @@
-<%= @post.text %>
+<%= image_tag @post.thumbnail_url, class: "post-main-image" %>
+<h1 class="post-title"><%= @post.title %></h1>
+<main class="full-post-text">
+    <%= @post.text %>
+</main>
