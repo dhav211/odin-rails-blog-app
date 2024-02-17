@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body {
+    margin: 0px;
+ }
+
+ #posts {
+    list-style-type: none;
+ }
+
+ .post-card {
+    background-color: #43BCCD;
+    display: flex;
+    flex-direction: row;
+    width: max(80vw, 350px);
+    border-radius: 1rem;
+    padding: 1rem;
+ }
+
+ .card-image {
+    width: 196px;
+    height: auto;
+ }
