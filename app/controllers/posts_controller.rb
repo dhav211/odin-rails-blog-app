@@ -1,18 +1,23 @@
 class PostsController < ApplicationController
+  before_action :set_post, except: %i[index new create]
+
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
   end
 
   def show
-    @post = Post.find params[:id]
+    # before_action
   end
 
   def edit
-    @post = Post.find params[:id]
+    # before_action
+  end
+
+  def new
+    @post = Post.new
   end
 
   def update
-    @post = Post.find params[:id]
     if @post.update(allowed_params)
       redirect_to @post
     else
@@ -20,7 +25,21 @@ class PostsController < ApplicationController
     end
   end
 
+  def create
+    @post = Post.new allowed_params
+
+    if @post.save
+      redirect_to @post
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
+
+  def set_post
+    @post = Post.find params[:id]
+  end
 
   def allowed_params
     params.require(:post).permit(:title, :text, :thumbnail_url)

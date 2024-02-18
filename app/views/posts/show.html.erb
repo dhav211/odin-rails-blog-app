@@ -1,5 +1,6 @@
 <%= image_tag @post.thumbnail_url, class: "post-main-image" %>
 <h1 class="post-title"><%= @post.title %></h1>
+<p class="post-date"> Written <i><%= time_ago_in_words @post.created_at %></i> on <%= @post.created_at.strftime("%B/%d/%Y") %></p>
 <main class="full-post-text">
     <%= simple_format @post.text %>
 </main>
